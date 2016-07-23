@@ -33,7 +33,9 @@ a, a:link, a:active {
 }
 
 a:hover, a:focus {
+  color: grey;
 }
 
 a:visited {
+  color: purple;
 }
