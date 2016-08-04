@@ -8,6 +8,10 @@ body {
   color: #313131;
 }
 
+main {
+  padding: 10px;
+}
+
 hr {
   margin: 1em;
   width: 80%;
