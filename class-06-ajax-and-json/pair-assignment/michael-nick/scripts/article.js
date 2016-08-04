@@ -44,7 +44,6 @@ Article.loadAll = function(rawData) {
 // This function will retrieve the data from either a local or remote source,
 // and process it, then hand off control to the View.
 Article.fetchAll = function() {
-  console.log('Hellos');
   if (localStorage.rawData) {
     // When rawData is already in localStorage,
     // we can load it by calling the .loadAll function,
@@ -56,19 +55,15 @@ Article.fetchAll = function() {
     // 1. Retrieve the JSON file from the server with AJAX (which jQuery method is best for this?),
 
     var $data = $.get('data/ipsumArticles.json', function(data) {
-      console.log(data);
       return data;
     });
-    console.log($data);
     // 2. Store the resulting JSON data with the .loadAll method,
     $data.done( function(data) {
       Article.loadAll(data);
-    });
     // 3. Cache it in localStorage so we can skip the server call next time,
-    $data.done( function(data) {
       localStorage.setItem('rawData', JSON.stringify(($data.responseJSON)));
+      articleView.initIndexPage();
     });
     // 4. And then render the index page (perhaps with an articleView method?).
-    articleView.initIndexPage();
   }
 };
