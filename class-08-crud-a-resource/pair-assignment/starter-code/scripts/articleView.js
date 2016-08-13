@@ -116,6 +116,7 @@
     articleView.handleMainNav();
     articleView.toggleNavDisplay();
     articleView.setTeasers();
+    Article.all[1].deleteRecord();
   };
 
   articleView.initAdminPage = function() {

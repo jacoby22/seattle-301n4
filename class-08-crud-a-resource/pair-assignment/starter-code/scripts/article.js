@@ -22,7 +22,7 @@
   // DONE: Set up a DB table for articles.
   Article.createTable = function(callback) {
     webDB.execute(
-      'CREATE TABLE articles (id INTEGER PRIMARY KEY, title VARCHAR(100) NOT NULL, category VARCHAR(100) NOT NULL, author VARCHAR(100) NOT NULL, authorURL TEXT NOT NULL, publishedOn DATE NOT NULL, body TEXT NOT NULL);', // what SQL command do we run here inside these quotes?
+      'CREATE TABLE IF NOT EXISTS articles (id INTEGER PRIMARY KEY, title VARCHAR(100) NOT NULL, category VARCHAR(100) NOT NULL, author VARCHAR(100) NOT NULL, authorURL TEXT NOT NULL, publishedOn DATE NOT NULL, body TEXT NOT NULL);', // what SQL command do we run here inside these quotes?
       function(result) {
         console.log('Successfully set up the articles table.', result);
         if (callback) callback();
@@ -33,7 +33,7 @@
   // DONE: Use correct SQL syntax to delete all records from the articles table.
   Article.truncateTable = function(callback) {
     webDB.execute(
-      'DELETE * FROM articles;', // <----finish the command here, inside the quotes.
+      'DELETE FROM articles;', // <----finish the command here, inside the quotes.
       callback
     );
   };
@@ -43,8 +43,8 @@
     webDB.execute(
       [
         {
-          'sql': 'INSERT INTO articles (title, category, author, authorURL, publishedOn, body) VALUES(?, ?, ?, ?, ?, ?);',
-          'data': [this.title, this.category, this.author, this.authorURL, this.publishedOn, this.body]
+          sql: 'INSERT INTO articles (title, category, author, authorURL, publishedOn, body) VALUES(?, ?, ?, ?, ?, ?);',
+          data: [this.title, this.category, this.author, this.authorURL, this.publishedOn, this.body]
         }
       ],
       callback
@@ -56,8 +56,8 @@
     webDB.execute(
       [
         {
-          sql: 'DELETE * FROM articles WHERE id = ?',
-          data: [id]
+          sql: 'DELETE FROM articles WHERE id = ?;',
+          data: [this.id]
         }
       ],
       callback
@@ -69,8 +69,8 @@
     webDB.execute(
       [
         {
-          sql: 'UPDATE articles SET (title, category, author, authorURL, publishedOn, body) WHERE VALUES(?, ?, ?, ?, ?, ?);',
-          data: ['New Title', 'New Category', 'New Author', 'New AuthorURL', 'New PublishedOn', 'New Body']
+          sql: 'UPDATE articles SET title = ?, category = ?, author = ?, authorURL = ?, publishedOn = ?, body = ? WHERE id = ? ;',
+          data: [this.title, this.category, this.author, this.authorURL, this.publishedOn, this.body, this.id]
         }
       ],
       callback
