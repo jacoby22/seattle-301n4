@@ -1,3 +1,29 @@
+# Class 10
+
+## Daily Plan
+- housekeeping: new pairs!
+- code review
+
+- Model review
+  - Persistence/CRUD
+  - SPA & Req/res
+    - requests take time & bandwidth, so let's minimize our use of them
+  - use client & remote DBs to save data
+  - maximize client performance by leveraging client-side storage
+  - use AJAX to make small, on-demand reqs
+
+- Controller preview
+  - controller moderates between view & model
+  - trigger all behavior necessary to create a response that fulfills a request
+  - routing
+    - use routes to derive app state & define requests
+  - middleware & Express
+    - middleware: functionality that has access to the req/res objects & helps prep the response
+    - Express: web-app framework based in Node.js
+      - installation with NPM
+    - server.js: what is it?
+    - static files
+
 # Assignment for Class 10 - Pair Project
 
 Apply what you've learned. With a pair, dive into a new code base. Learn your way around, and refactor the app with the principles you've learned over the past 2 weeks.
