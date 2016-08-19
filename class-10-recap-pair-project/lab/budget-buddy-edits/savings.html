@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Savings Page Yo!
+    </title>
+    <link href="css/normalize.css" type="text/css" rel="stylesheet">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans|Ubuntu|Quicksand' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <header>
+      <h1 class="title"/>budget buddy</h1>
+      <nav>
+        <ul>
+          <a href= "index.html"><li class="home-tab">HOME</li></a>
+          <a href= "budget.html"><li class="budget-tab">MY BUDGET</li></a>
+          <a href= "savings.html"><li class="current savings-tab">SAVINGS</li></a>
+          <a href= "cannoli.html"><li class="aboutus-tab">ABOUT US</li></a>
+          <a href= "resources.html"><li class="resources-tab">RESOURCES</li></a>
+        </ul>
+      </nav>
+    </header>
+    <main class ="not-index-main">
+      <section id="savings-income-event-section">
+        <button id="savings-income-event" class="savings-button-color">Save some of your remaining budget money!</button>
+        <section id="savings-heading-section">
+        </section>
+      </section>
+
+      <form method="get" id="savingsForm">
+
+        <article>
+          <label name="savingsFor">What are you saving for?</label>
+          <input type="text" name="savingsFor" class="insert" id="saving">
+        </article>
+
+        <article>
+          <label name="howMuch">How much do you need to save?</label>
+          <input type="number" name="howMuch" class="insert" id="need" required placeholder="Enter a number">
+        </article>
+
+        <article class="add">
+          <label name="addMoney">Add money to savings</label>
+          <input type="number" name="addMoney" class="insert" id="addMoney" required placeholder="Enter a number">
+        </article>
+
+        <section id="newGoal">
+
+        </section>
+      </form>
+      <article class="savings-buttons">
+        <button type="submit" form="savingsForm"id="submit" class="savings-button-color"value="submit">Savings Progress</button>
+        <button id="clear" class="savings-button-color">Start A New Goal</button>
+        <article id="savingsData"></article>
+        <article id="progress-holder">
+          <figure id="progress">
+          </figure>
+        </article>
+      </article>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/view.js"></script>
+  </body>
+</html>

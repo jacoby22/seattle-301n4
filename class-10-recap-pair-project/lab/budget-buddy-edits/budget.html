@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Budget Page</title>
+    <link href="css/normalize.css" type="text/css" rel="stylesheet">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans|Ubuntu|Quicksand' rel='stylesheet' type='text/css'>
+    <script src="js/chart.js"></script>
+  </head>
+  <body>
+    <header>
+        <h1 class="title"/>budget buddy</h1>
+      <nav>
+        <ul>
+          <a href= "index.html"><li class="home-tab">HOME</li></a>
+          <a href= "budget.html"><li class="current budget-tab">MY BUDGET</li></a>
+          <a href= "savings.html"><li class="savings-tab">SAVINGS</li></a>
+          <a href= "cannoli.html"><li class="aboutus-tab">ABOUT US</li></a>
+          <a href= "resources.html"><li class="resources-tab">RESOURCES</li></a>
+        </ul>
+      </nav>
+    </header>
+    <main class ="not-index-main">
+        <section>
+        <form id="budget-form">
+
+          <article class="income-input">
+            <label name="enterIncome">Available Income</label>
+            <input type="number" name="enterIncome" class="insert" id="income" required placeholder="Enter 0 or a number">
+          </article>
+            <article>
+              <label name="rentMortgage">Rent/Mortgage</label>
+              <input type="number" name="rentMortgage" class="insert" id="rent" required placeholder="Enter 0 or a number">
+            </article>
+
+            <article>
+              <label name="foodGroceries">Food/Groceries</label>
+              <input type="number" name="foodGroceries" class="insert" id="food" required placeholder="Enter 0 or a number">
+            </article>
+
+            <article>
+              <label name="insurance">Insurance</label>
+              <input type="number" name="insurance" class="insert" id="insure" required placeholder="Enter 0 or a number">
+            </article>
+
+            <article>
+              <label name="utilities">Utilities</label>
+              <input type="number" name="utilities" class="insert" id="util" required placeholder="Enter 0 or a number">
+            </article>
+
+            <article>
+              <label name="loansCcDebt">Loans/Credit Cards/Debt</label>
+              <input type="number" name="loansCcDebt" class="insert" id="loan" required placeholder="Enter 0 or a number">
+            </article>
+
+            <article>
+              <label name="transportation">Transportation</label>
+              <input type="number" name="transportation" class="insert" id="tran" required placeholder="Enter 0 or a number">
+            </article>
+
+            <button type="submit" id="submit" class="budget-button-color">Pie Chart</button>
+        </form>
+        <section>
+          <section id="canvas-section">
+          </section>
+          <section id="chart-legend-location">
+          </section>
+        </section>
+        <section id="budget-to-savings-button">
+          <input id="savings-plan-button" type="button" onclick="location.href='savings.html'" value="Move on to your Savings Plan">
+
+        </section>
+      </section>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/view.js"></script>
+  </body>
+</html>
